@@ -2,3 +2,4 @@
 
 export(myfirstfunction)
 export(mysum)
+export(scatterhist)
