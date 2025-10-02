@@ -1,0 +1,63 @@
+---
+title: "Birthday"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Birthday}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753F25addisong)
+```
+
+# Task 1: Mathematical Derivation of Birthday Problem
+
+Event A: { 2 or more people have the same birthday}
+
+$A^C = \bar{A}$ is that every student has a different birthday
+
+$$ 1 = P(A) + P(\bar{A}) $$
+Find the probability that every student has a different birthday, aka everything that isn't A:
+$$ P(\bar{A}) = \frac{365 \times 364 \times ... \times (365-n+1)}{365^n} $$
+Now substitute into the $1 = P(A) + P(\overline{A})$ equation:
+$$ 1 = P(A) + \frac{365 \times 364 \times ... \times (365-n+1)}{365^n} $$
+Solve for P(A):
+$$ P(A) = 1 - \frac{365 \times 364 \times ... \times (365-n+1)}{365^n} $$
+
+
+# Task 2: Reform the previous probability equation to use lfactorial() and lchoose()
+
+$$ P^{365}_{n} = n!C^{365}_{n} $$
+
+$$ P(\bar{A}) = \frac{P^{365}_{n}}{365^n} $$
+
+Solve for $log(P(\bar{A}))$ using lfactorial() and lchoose():
+$$ log(P(\bar{A})) = log(P^{365}_{n}) - nlog(365) $$
+$$ \Rightarrow log(n!) + logchoose(365,n) - nlog(365) $$
+
+$$ \Rightarrow lfactorial(n) + lchoose(365,n) - nlog(365) $$
+Reform the probability equation so that you use lfactorial() and lchoose():
+$$ P(A) = 1-P(\bar{A}) = 1-exp(log(P(\bar{A}))) $$
+Now you can plug in the previously derived lfactorial() and lchoose() equation for $log(P(\bar{A}))$:
+$$ \Rightarrow P(A) = 1 - exp(lfactorial(n) +lchoose(365,n) -nlog(365)) $$
+
+# Task 3: The Body of the Function
+
+Here is the body of the function created in the R package:
+
+```{r}
+body(birthday)
+```
+# Task 4: Using the Function
+
+```{r}
+birthday(x=20:25)
+```

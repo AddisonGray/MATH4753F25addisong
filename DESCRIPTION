@@ -16,3 +16,7 @@ LazyData: true
 URL: https://github.com/AddisonGray/MATH4753F25addisong
 BugReports: https://github.com/AddisonGray/MATH4753F25addisong/issues
 RoxygenNote: 7.3.2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

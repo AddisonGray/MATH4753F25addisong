@@ -4,6 +4,7 @@
 #' @param y a quantitative vector
 #' @param xlab x label
 #' @param ylab y label
+#' @importFrom graphics barplot hist layout mtext par
 #'
 #' @returns A scatter plot of x vs y with marginal histograms
 #' @export
