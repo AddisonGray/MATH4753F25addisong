@@ -1,0 +1,14 @@
+#' Fire Damage Data
+#'
+#' A small dataset showing the relationship between distance from a fire and the resulting
+#' property damage. This dataset can be used to illustrate simple linear regression or
+#' correlation analysis in R.
+#'
+#' @format ## `firedam`
+#' A data frame with 15 rows and 2 columns:
+#' \describe{
+#'   \item{DISTANCE}{Numeric. Distance (in unspecified units) from the fire.}
+#'   \item{DAMAGE}{Numeric. Amount of property damage (in unspecified units).}
+#' }
+#' @source Excel spreadsheet on desktop in Lab 7 folder in Stats Labs
+"fire"
