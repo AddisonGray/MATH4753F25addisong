@@ -1,0 +1,59 @@
+---
+title: "MATH4753F25addisong"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MATH4753F25addisong}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753F25addisong)
+```
+
+# 4 Working Functions
+
+For each function, I just entered the function name into the R chunk to actually show what the function is and what the "insides" are. I also included a line of actually calling and running the function. I just used the example values from my roxygen skeleton to create these lines. I tried to use "?function_name" but the documentation would load in a separate screen (not the knitted HTML document), so I went with a different way to show off the function.
+
+## birthday() Function
+
+```{r}
+birthday
+birthday(10)
+```
+
+## mybin() Function
+
+```{r}
+mybin
+mybin(iter=100,n=10,p=0.5)
+```
+
+## ntickets() Function
+
+```{r}
+ntickets
+ntickets(N=400, gamma=0.02, p=0.95)
+```
+
+## myboot2() Function
+
+```{r}
+myboot2
+set.seed(10); sam=rnorm(20,mean=10,sd=4)
+myboot2(iter=10000,x=sam,fun="mean",alpha=0.05)
+```
+
+# 1 Data Set
+
+```{r}
+data("fire")
+head(fire)
+```
